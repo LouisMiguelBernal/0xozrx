@@ -1,0 +1,39 @@
+[package]
+name = "ozrx-workstation"
+version = "0.2.0"
+description = "0xOZrx!! - LOCAL-FIRST WINDOWS SECURITY WORKSTATION"
+authors = ["0xOZrx"]
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "ozrx_workstation_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sysinfo = "0.33"
+ureq = { version = "2", default-features = false, features = ["json", "tls"] }
+sha2 = "0.10"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59", features = [
+  "Win32_Foundation",
+  "Win32_System_Threading",
+  "Win32_Security",
+  "Win32_UI_Shell",
+  "Win32_UI_WindowsAndMessaging",
+] }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

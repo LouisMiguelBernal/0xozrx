@@ -1,0 +1,84 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+src-tauri/target/
+src-tauri/gen/schemas/
+
+# Logs
+*.log
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Local runtime data (never commit user data)
+*.sqlite
+*.sqlite-journal
+*.db
+
+# --- dependencies / environments
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# --- build output / caches
+.next/
+.nuxt/
+.turbo/
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+
+# --- secrets / local config
+.env
+.env.*
+*.env
+!.env.example
+!.env.template
+!.env.sample
+!env.template
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+id_rsa*
+id_ed25519*
+credentials*.json
+client_secret*.json
+token.json
+*service-account*.json
+settings.local.json
+
+# --- local data
+*.sqlite3
+*-wal
+*-shm
+*.db-journal
+*.bak
+*.bak-*
+backups/
+
+# --- binaries
+*.exe
+*.msi
+*.dll
+*.pdb
+*.asar
+*.blockmap
+
+# --- OS / editor
+desktop.ini
+~$*

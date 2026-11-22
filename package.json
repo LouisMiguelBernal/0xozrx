@@ -1,0 +1,38 @@
+{
+  "name": "ozrx-workstation",
+  "private": true,
+  "version": "0.2.0",
+  "description": "0xOZrx!! - LOCAL-FIRST WINDOWS SECURITY WORKSTATION",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test && cd src-tauri && cargo check",
+    "clean": "powershell -NoProfile -Command \"Remove-Item -Recurse -Force dist, src-tauri/target -ErrorAction SilentlyContinue\"",
+    "tauri dev": "echo use: npm run tauri -- dev",
+    "tauri build": "echo use: npm run tauri -- build",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-dialog": "^2",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4",
+    "@tauri-apps/cli": "^2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4",
+    "typescript": "~5.7.2",
+    "vite": "^6",
+    "vitest": "^3"
+  }
+}
